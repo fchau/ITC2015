@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "ITC 2015 - Bits Please",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "express": "3.2.3",
-    "jade": "*",
+    "ejs": "*",
     "mongodb" : ">=0.9.6-7",
     "mongoose" : ">=3.6"
   }
