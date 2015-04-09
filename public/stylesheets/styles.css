@@ -132,7 +132,7 @@ h3 {
     margin-bottom: 0px;
     color: #ffffff;
     background-color: #F0534E;
-    background: linear-gradient(rgba(240, 83, 78, 0.75), rgba(240, 83, 78, 0.95)), url('../../../../../Downloads/hackstreet/img/jumbo.jpg') center;
+    background: linear-gradient(rgba(240, 83, 78, 0.75), rgba(240, 83, 78, 0.95)), url('../../imgjumbo.jpg') center;
     background-size: cover;
     background-repeat: no-repeat;
     text-align: left;
