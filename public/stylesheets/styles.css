@@ -1,0 +1,196 @@
+body {
+    padding-top: 50px;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'Ubuntu', sans-serif;
+}
+p {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+}
+a {
+    color: #F0534E;   
+}
+a:hover {
+    color: #be4541;  
+    text-decoration:none; 
+}
+h1 {
+    color: #F0534E !important;
+}
+h2 {
+    color: #38424E !important;
+}
+h3 {
+    color: #536376 !important;
+    font-size: 22px;
+    line-height: 28px;
+    margin: 0px 0px 10px 0px;
+}
+.centered {
+    margin: 0 auto;
+    text-align: center;
+}
+.hrHeadingTop {
+    border-width: 1px;
+    border-color: #F0534E;
+    width: 350px;
+    text-align: left !important;
+    margin-left: 0;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.hrHeadingBottom {
+    border-width: 1px;
+    border-color: #F0534E;
+    width: 250px;
+    text-align: left !important;
+    margin-left: 0;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+.hrHeadingTopRight {
+    border-width: 1px;
+    border-color: #F0534E;
+    width: 350px;
+    margin-right: 0;
+    text-align: right !important;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.hrHeadingBottomRight {
+    border-width: 1px;
+    border-color: #F0534E;
+    width: 250px;
+    margin-right: 0;
+    text-align: right !important;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+.hrHeadingTopCenter {
+    border-width: 1px;
+    border-color: #F0534E;
+    width: 350px;
+    margin: 0 auto
+    text-align: center !important;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+.hrHeadingBottomCenter {
+    border-width: 1px;
+    border-color: #F0534E;
+    width: 250px;
+    margin: 0 auto
+    text-align: center !important;
+    margin-top: 7px;
+    margin-bottom: 20px;
+}
+.navbar-inverse {
+    background-color: #fff;
+    border-color: #38424E;
+    border-bottom-width: 5px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.navbar-brand {
+    height: 50px;
+    padding: 5px 15px !important;
+}
+.navbar-inverse .navbar-nav>li>a {
+    color: #38424E;
+    font-weight: 600;
+}
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #F0534E;
+    background-color: transparent;
+}
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+    border-color: #38424E;
+}
+.navbar-inverse .navbar-toggle {
+    border-color: #38424E;
+}
+.navbar-inverse .navbar-toggle .icon-bar {
+    background-color: #38424E;
+}
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #ffffff;
+}
+.navbar-inverse .navbar-toggle:hover .icon-bar,
+.navbar-inverse .navbar-toggle:focus .icon-bar {
+    background-color: #F0534E;
+}
+.jumbotron {
+    padding: 15% 0% 15% 0%;
+    padding-left: 0px !important;
+    margin-bottom: 0px;
+    color: #ffffff;
+    background-color: #F0534E;
+    background: linear-gradient(rgba(240, 83, 78, 0.75), rgba(240, 83, 78, 0.95)), url('../../../../../Downloads/hackstreet/img/jumbo.jpg') center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: left;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #F0534E;
+    background-attachment: fixed;
+}
+.jumbotron h1,
+.jumbotron p {
+    text-shadow: 2px 2px #38424E;
+    color: #ffffff !important;
+}
+.btn-primary {
+    color: #ffffff;
+    background-color: transparent;
+    border-color: #ffffff;
+}
+.btn-primary:hover {
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.20);
+    border-color: #ffffff;
+}
+.lead {
+    font-size: 18px;
+    font-weight: 400;
+}
+.layerAlpha {
+    padding: 50px 0;
+    border-bottom: 1px solid #e7e7e7;
+}
+.layerBeta {
+    padding: 50px 0;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+footer {
+    padding: 2% 0% 2% 0%;
+    background-color: #38424E;  
+    margin: 0% 0% 0% 0%;
+}
+
+footer a, .footer-menu-divider {
+    color: #ffffff;   
+}
+
+@media(max-width:767px){
+     
+}
+@media(min-width:768px){
+
+}
+@media(min-width:992px){
+
+}
+@media(min-width:1200px){
+    .colHr {
+     display: none;   
+    }
+}
