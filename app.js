@@ -13,9 +13,12 @@ var express = require('express')
 
 var app = express();
 
-var Mongoose = require('mongoose');
-var db = Mongoose.createConnection('localhost', 'mytestapp');
-
+var mongoose = require('mongoose');
+mongoose.connect('localhost');
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function (callback) {
+});
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
@@ -32,8 +35,14 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
+// Define server routes used in the application
+module.exports = function(app) {
+    app.use('/flickr', flickr);
+    };
+
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/flickr', flickr);
 app.get('/flickr/mostRecent', flickr.mostRecent);
 
 app.get('/bitzplz', bitzplz.bitzplz);
