@@ -52,28 +52,39 @@ var mostRecent = function(req, res) {
 
                 child.on('message', function(data) {
                     // Perform the PUT request to the server to update image metadata on report images
-                    var putData = {
+                    var putData = JSON.stringify({
                         dominantColor : data.colorData.dominantColor,
                         imageId : data.colorData.imageId
+                    });
+                    var headers = {
+                        'Content-Type': 'application/json',
+                        'Content-Length': putData.length
                     };
                     var options = {
                         hostname: 'localhost',
-                        //port: 3000,
-                        path: newReport._id + '/' + putData.imageId,
-                        method: "PUT"
+                        port: 3000,
+                        path: '/' + newReport._id + '/' + putData.imageId,
+                        method: "PUT",
+                        headers: headers
                     };
+                    console.log("Path : ", options.path);
 
-                    var req=http.request(options, function(res) {
-                        res.setEncoding('utf8');
-                        res.on('data', function(chunk) {
+                    var putReq = http.request(options, function(putRes) {
+
+                    });
+
+                    var authReq=http.request(options, function(authRes) {
+                        authRes.setEncoding('utf8');
+                        authRes.on('data', function(chunk) {
                             console.log("Body: " + chunk)
                         });
                     });
-                    req.on('error', function(e) {
+                    authReq.on('error', function(e) {
                         console.log('Error with PUT request: ' + e.message);
                     });
-                    req.write(JSON.stringify(putData));
-                    req.end();
+                    authReq.write(putData);
+                    //authReq.write();
+                    authReq.end();
 
                 });
                 child.send(newReport);
@@ -101,7 +112,10 @@ var updateImage = function(req, res) {
     var reportId = req.params.reportId;
     var imgId = req.params.imgId;
 
-    var colorData = req.body;
+    console.log("Request body ", req.body);
+    var dominantColor = req.body.dominantColor;
+    console.log("Dominant color ", dominantColor);
+
 
     Reports.findOne({_id : reportId}).exec(function(err, report) {
         if (err) {
@@ -110,12 +124,13 @@ var updateImage = function(req, res) {
             var filtered = report.photo.filter(function (photo) {
                 return photo.id = imgId;
             });
-            filtered[0].colorData = colorData;
+            console.log("First hit ", filtered[0]);
+            filtered[0].dominantColor = dominantColor;
             report.save(function(err) {
                 if (err) {
-                    return res(400).jsonp({Error: err});
+                    return res.status(400).jsonp({Error: err});
                 } else {
-                    return res(200).jsonp("Successfully updated report " + reportId);
+                    return res.status(200).jsonp("Successfully updated report " + reportId);
                 }
             });
         }
