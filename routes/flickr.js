@@ -63,7 +63,7 @@ var mostRecent = function(req, res) {
                     var options = {
                         hostname: 'localhost',
                         port: 3000,
-                        path: '/' + newReport._id + '/' + putData.imageId,
+                        path: '/flickr/' + newReport._id + '/' + putData.imageId,
                         method: "PUT",
                         headers: headers
                     };

@@ -6,7 +6,8 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
-  , flickr = require('./routes/flickr')
+  , flickr = require('./routes/flickr'),
+    about = require('./routes/about')
   , bitzplz = require('./routes/bitzplz')
   , http = require('http')
   , path = require('path');
@@ -38,10 +39,11 @@ if ('development' == app.get('env')) {
 // Define server routes used in the application
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/about', about.about);
 app.get('/bitzplz', bitzplz.bitzplz);
 app.get('/flickr/mostRecent', flickr.mostRecent);
-app.get('/:reportId', flickr.getReport);
-app.put('/:reportId/:imgId', flickr.updateImage);
+app.get('/flickr/:reportId', flickr.getReport);
+app.put('/flickr/:reportId/:imgId', flickr.updateImage);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
