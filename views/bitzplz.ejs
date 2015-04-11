@@ -20,6 +20,7 @@
 </head>
 
 <body>
+
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -37,9 +38,9 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/">Home</a>
                     </li>
-                    <li><a href="demo.html">Demo</a>
+                    <li class="active"><a href="/bitzplz">Demo</a>
                     </li>
-                    <li><a href="/bitzplz">Usage</a>
+                    <li><a href="useage.html">Usage</a>
                     </li>
                     <li><a href="about.html">About</a>
                     </li>
@@ -50,155 +51,268 @@
         </div>
     </nav>
 
-    <div class="jumbotron">
+    <div class="jumbotronMini">
         <div class="container">
-            <h1>bits, please<br><small style = "color:#ffffff;">The ultimate flickr color sorter</small></h1>
-            <p>A web application that pulls and analyzes the latest flickr images and allows you to sort them by color. It provides data analytics for the photos that is used for research.</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">View demo &raquo;</a>
-            </p>
+            <h1>Demo</h1>
         </div>
     </div>
 
-    <div class="layerAlpha">
+    <div class="layerBetaCP">
+        <div class="container">
+            <ul class="nav nav-pills" style="float: left;">
+                <li role="presentation" class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                              Sort by color <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#"><i class="fa fa-square red"></i> Red</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square orange"></i> Orange</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square yellow"></i> Yellow</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square green"></i> Green</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square blue"></i> Blue</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square purple"></i> Purple</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square brown"></i> Brown</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square beige"></i> Beige</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square pink"></i> Pink</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square cyan"></i> Cyan</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square grey"></i> Grey</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square black"></i> Black</a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-square white"></i> White</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <button type="button" class="btn btn-default" style="float: left;">Color Graph</button>
+        </div>
+    </div>
+
+    <div class="layerAlpha" style="padding-top: 25px;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <div class="clearfix"></div>
-                    <h1>flickr integration</h1>
-                    <hr class="hrHeadingTop">
-                    <hr class="hrHeadingBottom">
-                    <p class="lead">Utilizing the Flickr API, the web application stores 500 of the most recent images and stores it into our database. <a href = "https://www.flickr.com/" target = _blank>flickr</a></p>
+                <div class="col-md-2 col-sm-4 pad hoverable">
+                    <div class="normal">
+                        <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                    </div>
+                    <div class="hover" style="background: #ffffff;">
+                        <p class="centered" style = "padding-top: 10%;"><strong>Primary Color:</strong></p>
+                        <p class="centered">Red</p>
+                    </div>
                 </div>
-                <div class="col-lg-6 col-sm-6">
-                    <img src="img/blanklaptop.png" class="img-responsive">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="layerBeta">
-        <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-sm-6">
-                    <img src="img/blanklaptop.png" class="img-responsive">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <div class="col-lg-6 col-sm-6">
-                    <div class="clearfix"></div>
-                    <h1 style = "text-align: right;">Color analysis</h1>
-                    <hr class="hrHeadingTopRight">
-                    <hr class="hrHeadingBottomRight">
-                    <p class="lead">With our color picking technology, the web application allows users to sort images by color and it utilize our data analytics tool in order to do analysis based on color.</p>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="layerAlpha">
-        <div class="container">
             <div class="row">
-                <div style = "margin-bottom: 3%;">
-                    <h1 style = "text-align: center;">How it works</h1>
-                    <hr class="hrHeadingTopCenter" style = "text-align: center;">
-                    <hr class="hrHeadingBottomCenter" style = "text-align: center;">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <div class="col-lg-3 col-md-6 centered">
-                    <i class="fa fa-download fa-3x"></i>
-                    <h2>Snatch</h2>
-                    <p>Our application pulls the 500 most recent flickr images using the flickr API and puts it into our database.</p>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <div class="col-lg-3 col-md-6 centered">
-                    <i class="fa fa-magic fa-3x"></i>
-                    <h2>Analyze</h2>
-                    <p>Next, the application scans the images for their primary colors and stores those values into the database.</p>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <div class="col-lg-3 col-md-6 centered">
-                    <i class="fa fa-picture-o fa-3x"></i>
-                    <h2>Display</h2>
-                    <p>The application then pulls from the database and displays the images in order of upload time.</p>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <div class="col-lg-3 col-md-6 centered">
-                    <i class="fa fa-list fa-3x"></i>
-                    <h2>Sort</h2>
-                    <p>Finally, the application allows users to sort the images by color and view a color report for each picture</p>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="layerBeta">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-5 col-sm-6">
-                    <div class="clearfix"></div>
-                    <h1>Test and download</h1>
-                    <hr class="hrHeadingTop">
-                    <hr class="hrHeadingBottom">
-                    <p>Test bits, please on</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <i class="fa fa-download fa-5x"></i>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
             </div>
 
-        </div>
-    </div>
-
-    <div class="layerAlpha">
-        <div class="container">
             <div class="row">
-                <div style = "margin-bottom: 3%;">
-                    <h1>The Hackstreet Boys</h1>
-                    <hr class="hrHeadingTop">
-                    <hr class="hrHeadingBottom">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <div class="col-md-3">
-                    <img src="img/jason_wu.jpg">
-                    <h2>Jason Wu</h2>
-                    <h3>Systems Architect,<br>Back End Developer</h3>
-                    <p>Jason is a 4th-year student currently working as a developer at Blue Panda Labs, a technical solutions provider. His background includes work in project management, systems engineering, and information technology and security. Beyond school and work, Jason spends an extraordinary amount of time with Arrdude.com, working on professional development and collaborating in the makerspace and technology community. He attributes most of his success with time spent with them.</p>
-                    <p><a href="resumes/jason_wu_resume_2015.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View resume</a>
-                    </p>
-                    <p><a href="http://www.linkedin.com/in/jasonalvinwu/en" target="_blank"><i class="fa fa-linkedin-square fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View LinkedIn profile</a>
-                    </p>
-                    
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <hr class = "colHr">
-                <div class="col-md-3">
-                    <img src="img/shaun_berkley.jpg">
-                    <h2>Shaun Berkley</h2>
-                    <h3>Front End Developer,<br>UX/UI Designer</h3>
-                    <p>Shaun is a 21-year-old Front End Web Developer with a strong passion for technology. He has an extensive background personally, academically, and professionally in front end web development as well as user experience (UX). This allows him to design websites with a purpose in mind: to create clean, efficient, effective, and intuitive websites in order to maximize user productivity and satisfaction. While his focus is currently on the front end side of web development, he is gradually learning and practicing back end development in order to one day become a Full Stack Developer.</p>
-                    <p><a href="resumes/shaun_berkley_resume_2015.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View resume</a>
-                    </p>
-                    <p><a href="http://www.linkedin.com/in/shaunberkley/en" target="_blank"><i class="fa fa-linkedin-square fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View LinkedIn profile</a>
-                    </p>
-                   
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <hr class = "colHr">
-                <div class="col-md-3">
-                    <img src="img/frank_chau.jpg">
-                    <h2>Frank Chau</h2>
-                    <h3>Front End Developer,<br>Back End Developer</h3>
-                    <p>Currently a web developer for the I&IT department at Cal Poly Pomona, Frank is looking for new challenges. Highly motivated and willing to learn, Frank is currently pursuing his undergraduate degree at Cal Poly Pomona, where he is currently a fourth-year student. Frank has worked with numerous projects for clients, which helps productivity in workforce. Frank is currently seeking an internship to expand his knowledge on programming.</p>
-                    <p><a href="resumes/frank_chau_resume_2015.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View resume</a>
-                    </p>
-                    <p><a href="http://www.linkedin.com/in/frankchau/en" target="_blank"><i class="fa fa-linkedin-square fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View LinkedIn profile</a>
-                    </p>
-                    
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
-                <hr class = "colHr">
-                <div class="col-md-3">
-                    <img src="img/luis_dimas.jpg">
-                    <h2>Luis Dimas</h2>
-                    <h3>Quality Assurance,<br>Front End Developer</h3>
-                    <p>Fourth year at Cal Poly Pomona, earning a B.S. degree in Business Administration with a emphasis in Computer Information Systems.Currently working part-time as a Systems Support Analyst for CU Direct for the Information Technology Dept. Very interested in experiencing and learning more about computer information systems and technologies, all while involving myself on and off campus with any opportunities that can help me acquire new skills for my future career in the CIS industry.</p>
-                    <p><a href="resumes/luis_dimas_resume_2015.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View resume</a>
-                    </p>
-                    <p><a href="http://www.linkedin.com/in/luisrdimas/en" target="_blank"><i class="fa fa-linkedin-square fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View LinkedIn profile</a>
-                    </p>
-                  
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                </div>
+                <div class="col-md-2 col-sm-4 pad">
+                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
                 </div>
             </div>
         </div>
@@ -208,7 +322,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12" style="text-align: center;">
-                    <ul class="list-inline" style = "margin-bottom: 0%;">
+                    <ul class="list-inline" style="margin-bottom: 0%;">
                         <li>
                             <a href="index.html">Home</a>
                         </li>
