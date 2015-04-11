@@ -3,25 +3,26 @@
  */
 
 
-var Flickr = require("flickrapi"),
-    flickrOptions = {
-        api_key : "5d61227fe2e00928367db4d86ec49b6c",
-        secret : "27da18ddf21cdeca",
-        user_id: "130780226@N08",
-        access_token: "72157651882156351-71ff922105badcb9",
-        access_token_secret: "617c202f5d534360"
-    },
-    express = require('express'),
-    router = express.Router(),
-    Reports = require('../models/flickr_model').reports,
-    http = require('http');
+var Flickr = require("flickrapi");
+var Reports = require('../models/flickr_model').reports;
+var http = require('http');
+var express = require('express');
+var router = express.Router();
+var flickrOptions = {
+    api_key : "5d61227fe2e00928367db4d86ec49b6c",
+    secret : "27da18ddf21cdeca",
+    user_id: "130780226@N08",
+    access_token: "72157651882156351-71ff922105badcb9",
+    access_token_secret: "617c202f5d534360"
+};
 
 // Initial "start report" request to query 500 images from Flickr
-function mostRecent(req, res) {
+var mostRecent = function(req, res) {
     var options = {
         api_key: "5d61227fe2e00928367db4d86ec49b6c",
         extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
-        per_page: 500,
+        //TODO change to 500
+        per_page: 1,
         page: 1
     };
     console.log('Authenticating with Flickr...');
@@ -44,25 +45,22 @@ function mostRecent(req, res) {
                 if (err) {
                     return console.error(err);
                 }
-                console.log("Inside save function.", newReport);
+                //console.log("Inside save function.", newReport);
                 // Begin a subprocess that runs an agent performing color analysis
-                childprocess = require('child_process').fork();
                 var cp = require('child_process');
-                var child = cp.fork('process.js');
+                var child = cp.fork('routes/process.js');
 
                 child.on('message', function(data) {
                     // Perform the PUT request to the server to update image metadata on report images
-                    var putData = querystring.stringify({
-                        colorData : data.colorData
-                    });
+                    var putData = {
+                        dominantColor : data.colorData.dominantColor,
+                        imageId : data.colorData.imageId
+                    };
                     var options = {
                         hostname: 'localhost',
-                        port: 80,
-                        path: data.reportId + '/' + data.imgId,
-                        method: PUT,
-                        headers: {
-                            'Content-Type' : 'application/x-www-form-urlencoded'
-                        }
+                        //port: 3000,
+                        path: newReport._id + '/' + putData.imageId,
+                        method: "PUT"
                     };
 
                     var req=http.request(options, function(res) {
@@ -74,7 +72,7 @@ function mostRecent(req, res) {
                     req.on('error', function(e) {
                         console.log('Error with PUT request: ' + e.message);
                     });
-                    req.write(putData);
+                    req.write(JSON.stringify(putData));
                     req.end();
 
                 });
@@ -83,11 +81,12 @@ function mostRecent(req, res) {
             });
         });
     });
-}
+};
+
 // GET request to retrieve report when prompted by client
-router.get(':/reportId', function(req, res) {
+var getReport = function(req, res) {
     var reportId = req.params.reportId;
-    Reports.findOne({_id : reportId}).exec(function(err, report) {
+    Reports.findById(reportId).exec(function(err, report) {
         if (err) {
             return res.status(400).jsonp({error: err});
         }
@@ -95,10 +94,10 @@ router.get(':/reportId', function(req, res) {
             return res.status(200).json(report);
         }
     });
-});
+};
 
 // PUT request to update report with image metadata as they are analyzed in the child process
-router.put(':/reportId/:imgId', function(req, res) {
+var updateImage = function(req, res) {
     var reportId = req.params.reportId;
     var imgId = req.params.imgId;
 
@@ -121,8 +120,10 @@ router.put(':/reportId/:imgId', function(req, res) {
             });
         }
     });
-});
+};
 
-
-module.exports = router;
+//router.get('/', function(req, res) {res.send('Monkeys');})
+//module.exports = router;
 exports.mostRecent = mostRecent;
+exports.getReport = getReport;
+exports.updateImage = updateImage;

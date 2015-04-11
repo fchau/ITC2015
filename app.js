@@ -36,14 +36,11 @@ if ('development' == app.get('env')) {
 }
 
 // Define server routes used in the application
-module.exports = function(app) {
-    app.use('/flickr', flickr);
-    };
-
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/flickr', flickr);
 app.get('/flickr/mostRecent', flickr.mostRecent);
+app.get('/:reportId', flickr.getReport);
+app.put('/:reportId/:imgId', flickr.updateImage);
 
 app.get('/bitzplz', bitzplz.bitzplz);
 http.createServer(app).listen(app.get('port'), function(){
