@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="test">
 
 <head>
     <meta charset="utf-8">
@@ -7,19 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <title>bits, please</title>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
+         <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-resource.js"></script>
+        <script src="javascripts/controller.js"></script>
     <!-- Bootstrap -->
     <link type='text/css' href="stylesheets/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom -->
     <link type='text/css' href="stylesheets/styles.css" rel="stylesheet">
-
+    <link type='text/css' href="stylesheets/style.css" rel="stylesheet">
     <!-- Font Awesome -->
     <link type='text/css' rel="stylesheet" href="stylesheets/font-awesome/css/font-awesome.min.css">
 
 </head>
 
-<body>
+<body ng-controller="PostsCtrlAjax">
 
     <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
@@ -40,7 +42,9 @@
                     </li>
                     <li class="active"><a href="/bitzplz">Demo</a>
                     </li>
-                    <li><a href="/about">About</a>
+                    <li><a href="#">Usage</a>
+                    </li>
+                    <li><a href="#">About</a>
                     </li>
                 </ul>
             </div>
@@ -76,230 +80,51 @@
                     </ul>
                 </li>
             </ul>
-            <button type="button" class="btn btn-default" style="float: left;">Color Analytics</button>
+            <button type="button" class="btn btn-default" style="float: left;" data-toggle="modal" data-target="#myModal">Color Analytics</button>
+             <select ng-model="colorFlt" ng-options="color as color for color in colors" class="form-control" style="width:150px;">
+                <option value="">Sort by color</option>
+                <option ng-repeat="color in colors" value="{{color}}">{{color}}</option>
+            </select>
         </div>
     </div>
 
-    <div class="layerAlpha" style="padding-top: 25px;">
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Color Analytics</h4>
+                </div>
+                <div id="modaltest" class="modal-body">
+                    <script src="http://d3js.org/d3.v3.min.js"></script>
+                    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+                    <script src="javascripts/testdraw.js" ></script>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="layerAlpha" style="padding-top: 25px;" >
         <div class="container">
             <div class="row">
-                <div class="col-md-2 col-sm-4 pad hoverable">
+                <div class="col-md-2 col-sm-4 pad hoverable" ng-repeat="post in posts | filter: colorFlt" >
                     <div class="normal">
-                        <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
+                        <img src='{{post.url}}' class="img-responsive center">
                     </div>
                     <div class="hover" style="background: #ffffff;">
                         <p class="centered" style = "padding-top: 10%;"><strong>Primary Color:</strong></p>
-                        <p class="centered">Red</p>
+                        <p class="centered">{{post.dominant}}</p>
                     </div>
                 </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
-                <div class="col-md-2 col-sm-4 pad">
-                    <img src="http://static.guim.co.uk/sys-images/Guardian/Pix/pictures/2014/4/11/1397210130748/Spring-Lamb.-Image-shot-2-011.jpg" class="img-responsive center">
-                </div>
+               
             </div>
         </div>
     </div>
-
     <footer>
         <div class="container">
             <div class="row">
