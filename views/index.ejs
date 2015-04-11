@@ -36,15 +36,11 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="/">Home</a>
+                    <li class="active"><a href="/">Home</a>
                     </li>
-                    <li><a href="demo.html">Demo</a>
+                    <li><a href="/bitzplz">Demo</a>
                     </li>
-                    <li><a href="/bitzplz">Usage</a>
-                    </li>
-                    <li><a href="about.html">About</a>
-                    </li>
-                    <li><a href="contact.html">Contact</a>
+                    <li><a href="/about">About</a>
                     </li>
                 </ul>
             </div>
@@ -53,9 +49,9 @@
 
     <div class="jumbotron">
         <div class="container">
-            <h1>bits, please<br><small style = "color:#ffffff;">The ultimate flickr color sorter</small></h1>
-            <p>A web application that pulls and analyzes the latest flickr images and allows you to sort them by color. It provides data analytics for the photos that is used for research.</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">View demo &raquo;</a>
+            <h1>bits, please<br><small style = "color:#ffffff;">The ultimate color analytics tool for Flickr</small></h1>
+            <p>A web application that pulls and analyzes the latest Flickr images and allows you to sort them by color. </p>
+            <p><a class="btn btn-primary btn-lg" href="/demo" role="button">View demo &raquo;</a>
             </p>
         </div>
     </div>
@@ -65,16 +61,15 @@
             <div class="row">
                 <div class="col-lg-6 col-sm-6">
                     <div class="clearfix"></div>
-                    <h1>flickr integration</h1>
+                    <h1>Flickr integration</h1>
                     <hr class="hrHeadingTop">
                     <hr class="hrHeadingBottom">
-                    <p class="lead">Utilizing the Flickr API, the web application stores 500 of the most recent images and stores it into our database. <a href = "https://www.flickr.com/" target = _blank>flickr</a></p>
+                    <p class="lead">With over 87 million registered users and upwards of 6 billion photos, Flickr is one of the largest image and video hosts on the internet. bits, please utilizes the Flickr API to collect the 500 of the most recent images from Flickr and stores their metadata within a Mongo database.</p>
                 </div>
                 <div class="col-lg-6 col-sm-6">
                     <img src="img/blanklaptop.png" class="img-responsive">
                 </div>
             </div>
-
         </div>
     </div>
 
@@ -89,7 +84,7 @@
                     <h1 style = "text-align: right;">Color analysis</h1>
                     <hr class="hrHeadingTopRight">
                     <hr class="hrHeadingBottomRight">
-                    <p class="lead">With our color picking technology, the web application allows users to sort images by color and it utilize our data analytics tool in order to do analysis based on color.</p>
+                    <p class="lead">With our color analyzing technology, bits, please scans the images for color in hexadecimal and tags them with one of the six primary and secondary color names. The application then allows users to sort images by color preference in order to display images with specific dominant colors.</p>
                 </div>
             </div>
 
@@ -131,77 +126,26 @@
     <div class="layerBeta">
         <div class="container">
             <div class="row">
-                <div class="col-lg-5 col-sm-6">
+                <div class="col-md-12"  style = "text-align: center;">
                     <div class="clearfix"></div>
                     <h1>Test and download</h1>
-                    <hr class="hrHeadingTop">
-                    <hr class="hrHeadingBottom">
-                    <p>Test bits, please on</p>
-                </div>
-                <div class="col-lg-5 col-lg-offset-2 col-sm-6">
-                    <i class="fa fa-download fa-5x"></i>
+                    <hr class="hrHeadingTopCenter">
+                    <hr class="hrHeadingBottomCenter">
+                    <p>Test bits, please in your browser or on your desktop.</p>
                 </div>
             </div>
-
-        </div>
-    </div>
-
-    <div class="layerAlpha">
-        <div class="container">
             <div class="row">
-                <div style = "margin-bottom: 3%;">
-                    <h1>The Hackstreet Boys</h1>
-                    <hr class="hrHeadingTop">
-                    <hr class="hrHeadingBottom">
+                <div class = "col-md-3"></div>
+                <div class="col-md-3" style = "text-align: center; margin-top: 20px;">
+                    <a href = "/usage"><i class="fa fa-download fa-5x mainblue centered"></i>
+                    <h3 class = "centered">Download ZIP file</h3></a>
                 </div>
-                <div class="col-md-3">
-                    <img src="img/jason_wu.jpg">
-                    <h2>Jason Wu</h2>
-                    <h3>Systems Architect,<br>Back End Developer</h3>
-                    <p>Jason is a 4th-year student currently working as a developer at Blue Panda Labs, a technical solutions provider. His background includes work in project management, systems engineering, and information technology and security. Beyond school and work, Jason spends an extraordinary amount of time with Arrdude.com, working on professional development and collaborating in the makerspace and technology community. He attributes most of his success with time spent with them.</p>
-                    <p><a href="resumes/jason_wu_resume_2015.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View resume</a>
-                    </p>
-                    <p><a href="http://www.linkedin.com/in/jasonalvinwu/en" target="_blank"><i class="fa fa-linkedin-square fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View LinkedIn profile</a>
-                    </p>
-                    
-                </div>
-                <hr class = "colHr">
-                <div class="col-md-3">
-                    <img src="img/shaun_berkley.jpg">
-                    <h2>Shaun Berkley</h2>
-                    <h3>Front End Developer,<br>UX/UI Designer</h3>
-                    <p>Shaun is a 21-year-old Front End Web Developer with a strong passion for technology. He has an extensive background personally, academically, and professionally in front end web development as well as user experience (UX). This allows him to design websites with a purpose in mind: to create clean, efficient, effective, and intuitive websites in order to maximize user productivity and satisfaction. While his focus is currently on the front end side of web development, he is gradually learning and practicing back end development in order to one day become a Full Stack Developer.</p>
-                    <p><a href="resumes/shaun_berkley_resume_2015.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View resume</a>
-                    </p>
-                    <p><a href="http://www.linkedin.com/in/shaunberkley/en" target="_blank"><i class="fa fa-linkedin-square fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View LinkedIn profile</a>
-                    </p>
-                   
-                </div>
-                <hr class = "colHr">
-                <div class="col-md-3">
-                    <img src="img/frank_chau.jpg">
-                    <h2>Frank Chau</h2>
-                    <h3>Front End Developer,<br>Back End Developer</h3>
-                    <p>Currently a web developer for the I&IT department at Cal Poly Pomona, Frank is looking for new challenges. Highly motivated and willing to learn, Frank is currently pursuing his undergraduate degree at Cal Poly Pomona, where he is currently a fourth-year student. Frank has worked with numerous projects for clients, which helps productivity in workforce. Frank is currently seeking an internship to expand his knowledge on programming.</p>
-                    <p><a href="resumes/frank_chau_resume_2015.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View resume</a>
-                    </p>
-                    <p><a href="http://www.linkedin.com/in/frankchau/en" target="_blank"><i class="fa fa-linkedin-square fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View LinkedIn profile</a>
-                    </p>
-                    
-                </div>
-                <hr class = "colHr">
-                <div class="col-md-3">
-                    <img src="img/luis_dimas.jpg">
-                    <h2>Luis Dimas</h2>
-                    <h3>Quality Assurance,<br>Front End Developer</h3>
-                    <p>Fourth year at Cal Poly Pomona, earning a B.S. degree in Business Administration with a emphasis in Computer Information Systems.Currently working part-time as a Systems Support Analyst for CU Direct for the Information Technology Dept. Very interested in experiencing and learning more about computer information systems and technologies, all while involving myself on and off campus with any opportunities that can help me acquire new skills for my future career in the CIS industry.</p>
-                    <p><a href="resumes/luis_dimas_resume_2015.pdf" target="_blank"><i class="fa fa-file-pdf-o fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View resume</a>
-                    </p>
-                    <p><a href="http://www.linkedin.com/in/luisrdimas/en" target="_blank"><i class="fa fa-linkedin-square fa-2x" style = "vertical-align: middle; margin-right: 10px; color: #38424E !important;"></i>View LinkedIn profile</a>
-                    </p>
-                  
+                <div class="col-md-3" style = "text-align: center; margin-top: 20px;">
+                    <a href = "#"><i class="fa fa-github fa-5x mainblue centered"></i> 
+                        <h3 class = "centered">Check us out on GitHub</h3></a>
                 </div>
             </div>
+
         </div>
     </div>
 
@@ -209,27 +153,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12" style="text-align: center;">
-                    <ul class="list-inline" style = "margin-bottom: 0%;">
-                        <li>
-                            <a href="index.html">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">⋅</li>
-                        <li>
-                            <a href="demo.html">Demo</a>
-                        </li>
-                        <li class="footer-menu-divider">⋅</li>
-                        <li>
-                            <a href="usage.html">Usage</a>
-                        </li>
-                        <li class="footer-menu-divider">⋅</li>
-                        <li>
-                            <a href="about.html">About</a>
-                        </li>
-                        <li class="footer-menu-divider">⋅</li>
-                        <li>
-                            <a href="contact.html">Contact</a>
-                        </li>
-                    </ul>
+                    <h5 class = "white">©Hackstreet Boys 2015</h5>
                 </div>
             </div>
         </div>

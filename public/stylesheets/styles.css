@@ -278,55 +278,59 @@ h3 {
 }
 
 .red {
-    color: #ee0000;
+    color: #ee0000 !important;
 }
 
 .orange {
-    color: #ff4500;
+    color: #ff4500 !important;
 }
 
 .yellow {
-    color: #eeee00;
+    color: #eeee00 !important;
 }
 
 .green {
-    color: #00cd00;
+    color: #00cd00 !important;
 }
 
 .blue {
-    color: #00008b;
+    color: #00008b !important;
 }
 
-.purple {
-    color: #551a8b;
+.violet {
+    color: #551a8b !important;
 }
 
 .brown {
-    color: #8b4513;
+    color: #8b4513 !important;
 }
 
 .beige {
-    color: #f5f5dc;
+    color: #f5f5dc !important;
 }
 
 .pink {
-    color: #ffb5c5;
+    color: #ffb5c5 !important;
 }
 
 .cyan {
-    color: #00cdcd;
+    color: #00cdcd !important;
 }
 
 .grey {
-    color: #D3D3D3;
+    color: #D3D3D3 !important;
 }
 
 .black {
-    color: #000000;
+    color: #000000 !important;
 }
 
 .white {
-    color: #FFFFFF;
+    color: #FFFFFF !important;
+}
+
+.mainblue {
+    color: #38424E !important;
 }
 
 footer {
