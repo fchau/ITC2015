@@ -7,6 +7,7 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , flickr = require('./routes/flickr')
+  , bitzplz = require('./routes/bitzplz')
   , http = require('http')
   , path = require('path');
 
@@ -35,6 +36,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/flickr/mostRecent', flickr.mostRecent);
 
+app.get('/bitzplz', bitzplz.bitzplz);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
