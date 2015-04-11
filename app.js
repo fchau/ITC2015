@@ -38,11 +38,11 @@ if ('development' == app.get('env')) {
 // Define server routes used in the application
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/bitzplz', bitzplz.bitzplz);
 app.get('/flickr/mostRecent', flickr.mostRecent);
 app.get('/:reportId', flickr.getReport);
 app.put('/:reportId/:imgId', flickr.updateImage);
 
-app.get('/bitzplz', bitzplz.bitzplz);
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
