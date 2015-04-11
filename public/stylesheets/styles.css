@@ -146,6 +146,22 @@ h3 {
     text-shadow: 2px 2px #38424E;
     color: #ffffff !important;
 }
+
+.jumbotronMini {
+    padding: 5% 0% 5% 0%;
+    padding-left: 0px !important;
+    margin-bottom: 0px;
+    color: #ffffff;
+    background-color: #F0534E;
+    background: linear-gradient(rgba(240, 83, 78, 0.75), rgba(240, 83, 78, 0.95)), url('../../img/jumbo.jpg') center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: left;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #F0534E;
+    background-attachment: fixed;   
+}
 .btn-primary {
     color: #ffffff;
     background-color: transparent;
