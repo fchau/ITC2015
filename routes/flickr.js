@@ -104,9 +104,9 @@ var updateImage = function(req, res) {
     var reportId = req.params.reportId;
     var imgId = req.params.imgId;
 
-    console.log("Request body ", req.body);
+    //console.log("Request body ", req.body);
     var dominantColor = req.body.dominantColor;
-    console.log("Dominant color ", dominantColor);
+    //console.log("Dominant color ", dominantColor);
 
 
     Reports.findOne({_id : reportId}).exec(function(err, report) {
@@ -116,9 +116,8 @@ var updateImage = function(req, res) {
             var filtered = report.photo.filter(function (photo) {
                 return photo.id = imgId;
             });
-            console.log("First hit ", filtered[0]);
+            //console.log("First hit ", filtered[0]);
             filtered[0].dominantColor = dominantColor;
-            console.log(filtered[0].dominantColor);
             report.save(function(err) {
                 if (err) {
                     return res.status(400).jsonp({Error: err});

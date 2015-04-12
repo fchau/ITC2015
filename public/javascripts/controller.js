@@ -2,12 +2,15 @@ var ctrl = angular.module('test', []);
 
 ctrl.controller('PostsCtrlAjax', function($scope, $http, $timeout){
   $scope.posts = [];
-  
+  $scope.showloader = function() {
+      $scope.state = "LOADING";
+  }
   $scope.getData = function(){
     $http({method: 'GET', url: '../flickr/mostRecent'}).success(function(data)
       {
       $scope.posts = data.photo; // response data 
       console.log($scope.posts);
+      $scope.state = "SUCCESS";
           $scope.colors = [];
 
           angular.forEach(data.photo, function(value, dominantColor){
@@ -19,7 +22,7 @@ ctrl.controller('PostsCtrlAjax', function($scope, $http, $timeout){
       });
     
   };
-
+$scope.showloader();
 $scope.getData();
  
   //'javascripts/testapi.json'

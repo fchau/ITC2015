@@ -110,18 +110,26 @@
 
         <div class="layerAlpha" style="padding-top: 25px;" >
         <div class="container">
+            <div class="row" ng-show="state == 'LOADING'" >
+                <div class="col-md-12 text-center"> 
+                 <button class="btn btn-success">Loading...
+                            <i class="fa fa-spinner fa-spin"></i>
+                    </button>
+                </div>
+            </div>
             <div class="row">
+                
                 <div class="col-md-2 col-sm-4 pad hoverable" ng-repeat="post in posts | filter: colorFlt" >
+                   
+                        <div  class="normal">
+                            <img src='{{post.url_n}}' class="img-responsive center">
+                            
+                        </div>
+                        <div class="hover" style="background: #ffffff;">
+                            <p class="centered" style = "padding-top: 10%;"><strong>Primary Color:</strong></p>
 
-                    <div  class="normal">
-                        <img src='{{post.url_n}}' class="img-responsive center">
-                        
-                    </div>
-                    <div class="hover" style="background: #ffffff;">
-                        <p class="centered" style = "padding-top: 10%;"><strong>Primary Color:</strong></p>
-
-                        <p class="centered">{{post.dominantColor}}</p>
-                    </div>
+                            <p class="centered">{{post.dominantColor}}</p>
+                        </div>
                 </div>
                
             </div>
