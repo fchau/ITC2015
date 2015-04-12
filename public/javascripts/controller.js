@@ -4,22 +4,23 @@ ctrl.controller('PostsCtrlAjax', function($scope, $http, $timeout){
   $scope.posts = [];
   
   $scope.getData = function(){
-    $http({method: 'GET', url: 'javascripts/testapi.json'}).success(function(data)
+    $http({method: 'GET', url: '../flickr/mostRecent'}).success(function(data)
       {
-      $scope.posts = data; // response data 
-      $scope.colors = [];
+      $scope.posts = data.photo; // response data 
+      console.log($scope.posts);
+     /* $scope.colors = [];
       angular.forEach(data, function(value, dominant){
         if($scope.colors.indexOf(value.dominant) == -1){
           $scope.colors.push(value.dominant);
         }
-        })
+        })*/
       });
-    console.log($scope.posts);
+    
   };
 
 $scope.getData();
  
-  
+  //'javascripts/testapi.json'
 
   // Kick off the interval
   
