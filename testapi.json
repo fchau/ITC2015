@@ -1,0 +1,249 @@
+[
+    {
+        "name" : "Name1",
+        "url" : "products/1.jpg",
+        "colors" : {
+            "black": "1",
+            "white": "5",
+            "blue": "37",
+            "red": "23",
+            "yellow": "89",
+            "green": "34",
+            "purple": "53",
+            "orange" : "45",
+            "cyan" : "12",
+            "beige" : "24",
+            "brown" : "93",
+            "pink" : "23",
+            "gray" : "4"
+        }
+    },
+    {
+        "name" : "Name2",
+        "url" : "products/2.jpg",
+        "colors" : {
+            "black": "6",
+            "white": "15",
+            "blue": "27",
+            "red": "74",
+            "yellow": "45",
+            "green": "94",
+            "purple": "32",
+            "orange" : "85",
+            "cyan" : "59",
+            "beige" : "23",
+            "brown" : "93",
+            "pink" : "92",
+            "gray" : "12"
+        }
+    },
+    {
+        "name" : "Name3",
+        "url" : "products/3.jpg",
+        "colors" : {
+            "black": "90",
+            "white": "44",
+            "blue": "14",
+            "red": "8",
+            "yellow": "75",
+            "green": "45",
+            "purple": "83",
+            "orange" : "22",
+            "cyan" : "62",
+            "beige" : "94",
+            "brown" : "44",
+            "pink" : "85",
+            "gray" : "53"
+        }
+    },
+    {
+        "name" : "Name4",
+        "url" : "products/4.jpg",
+        "colors" : {
+            "black": "85",
+            "white": "24",
+            "blue": "53",
+            "red": "23",
+            "yellow": "55",
+            "green": "38",
+            "purple": "84",
+            "orange" : "99",
+            "cyan" : "24",
+            "beige" : "15",
+            "brown" : "1",
+            "pink" : "7",
+            "gray" : "35"
+        }
+    },
+    {
+        "name" : "Name5",
+        "url" : "products/5.jpg",
+        "colors" : {
+            "black": "88",
+            "white": "58",
+            "blue": "94",
+            "red": "34",
+            "yellow": "82",
+            "green": "24",
+            "purple": "53",
+            "orange" : "84",
+            "cyan" : "22",
+            "beige" : "1",
+            "brown" : "5",
+            "pink" : "95",
+            "gray" : "25"
+        }
+    },
+    {
+        "name" : "Name6",
+        "url" : "products/6.jpg",
+        "colors" : {
+            "black": "81",
+            "white": "14",
+            "blue": "61",
+            "red": "91",
+            "yellow": "53",
+            "green": "53",
+            "purple": "34",
+            "orange" : "85",
+            "cyan" : "53",
+            "beige" : "24",
+            "brown" : "52",
+            "pink" : "81",
+            "gray" : "51"
+        }
+    },
+    {
+        "name" : "Name7",
+        "url" : "products/7.jpg",
+        "colors" : {
+            "black": "1",
+            "white": "83",
+            "blue": "84",
+            "red": "91",
+            "yellow": "81",
+            "green": "55",
+            "purple": "35",
+            "orange" : "94",
+            "cyan" : "18",
+            "beige" : "81",
+            "brown" : "91",
+            "pink" : "71",
+            "gray" : "80"
+        }
+    },
+    {
+        "name" : "Name8",
+        "url" : "products/7.jpg",
+        "colors" : {
+            "black": "91",
+            "white": "9",
+            "blue": "72",
+            "red": "51",
+            "yellow": "14",
+            "green": "51",
+            "purple": "90",
+            "orange" : "15",
+            "cyan" : "61",
+            "beige" : "61",
+            "brown" : "81",
+            "pink" : "91",
+            "gray" : "1"
+        }
+    },
+    {
+        "name" : "Name9",
+        "url" : "products/8.jpg",
+        "colors" : {
+            "black": "18",
+            "white": "15",
+            "blue": "71",
+            "red": "75",
+            "yellow": "24",
+            "green": "62",
+            "purple": "62",
+            "orange" : "16",
+            "cyan" : "71",
+            "beige" : "51",
+            "brown" : "62",
+            "pink" : "62",
+            "gray" : "71"
+        }
+    },
+    {
+        "name" : "Name10",
+        "url" : "products/9.jpg",
+        "colors" : {
+            "black": "90",
+            "white": "72",
+            "blue": "62",
+            "red": "13",
+            "yellow": "76",
+            "green": "89",
+            "purple": "45",
+            "orange" : "61",
+            "cyan" : "61",
+            "beige" : "15",
+            "brown" : "72",
+            "pink" : "62",
+            "gray" : "16"
+        }
+    },
+    {
+        "name" : "Name11",
+        "url" : "products/10.jpg",
+        "colors" : {
+            "black": "89",
+            "white": "15",
+            "blue": "90",
+            "red": "51",
+            "yellow": "51",
+            "green": "90",
+            "purple": "51",
+            "orange" : "31",
+            "cyan" : "9",
+            "beige" : "61",
+            "brown" : "26",
+            "pink" : "61",
+            "gray" : "99"
+        }
+    },
+    {
+        "name" : "Name12",
+        "url" : "products/11.jpg",
+        "colors" : {
+            "black": "9",
+            "white": "15",
+            "blue": "62",
+            "red": "62",
+            "yellow": "62",
+            "green": "83",
+            "purple": "62",
+            "orange" : "16",
+            "cyan" : "72",
+            "beige" : "26",
+            "brown" : "72",
+            "pink" : "16",
+            "gray" : "72"
+        }
+    },
+    {
+        "name" : "Name13",
+        "url" : "products/12.jpg",
+        "colors" : {
+            "black": "91",
+            "white": "61",
+            "blue": "51",
+            "red": "19",
+            "yellow": "1",
+            "green": "99",
+            "purple": "61",
+            "orange" : "34",
+            "cyan" : "61",
+            "beige" : "61",
+            "brown" : "71",
+            "pink" : "16",
+            "gray" : "1"
+        }
+    }
+]

@@ -9,26 +9,37 @@ ctrl.controller('PostsCtrlAjax', function($scope, $http, $timeout){
     $http({method: 'GET', url: '../flickr/mostRecent'}).success(function(data)
       {
       $scope.posts = data.photo; // response data 
+      $scope.reportId = data._id; 
       console.log($scope.posts);
       $scope.state = "SUCCESS";
+      //$scope.getColor();
           $scope.colors = [];
 
           angular.forEach(data.photo, function(value, dominantColor){
             if($scope.colors.indexOf(value.dominantColor) == -1){
               $scope.colors.push(value.dominantColor);
             }
-            console.log($scope.colors);
+            // console.log($scope.colors);
           })
       });
-    
+   
   };
-$scope.showloader();
-$scope.getData();
- 
+$scope.getColor = function(){
+   $http({method: 'GET', url: '../flickr/' + $scope.reportId}).success(function(report){
+        $scope.posts = report.photo;
+    });
+}
+$scope.intervalFunction = function(){
+  setInterval(function() {
+    $scope.getColor();
+  }, 10000);
+};
   //'javascripts/testapi.json'
   //'../flickr/mostRecent'
   // Kick off the interval
-  
+$scope.showloader();
+$scope.getData();
+$scope.intervalFunction();
  // setInterval($scope.getData,5000);
  
  
