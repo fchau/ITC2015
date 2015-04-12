@@ -8,6 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , flickr = require('./routes/flickr')
   , bitzplz = require('./routes/bitzplz')
+  , about = require('./routes/about')
   , http = require('http')
   , path = require('path');
 
@@ -39,6 +40,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/bitzplz', bitzplz.bitzplz);
+app.get('/about', about.about)
 app.get('/flickr/mostRecent', flickr.mostRecent);
 app.get('/:reportId', flickr.getReport);
 app.put('/:reportId/:imgId', flickr.updateImage);
