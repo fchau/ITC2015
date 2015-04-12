@@ -22,7 +22,7 @@ var mostRecent = function(req, res) {
         api_key: "5d61227fe2e00928367db4d86ec49b6c",
         extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
         //TODO change to 500
-        per_page: 1,
+        per_page: 50,
         page: 1
     };
     console.log('Authenticating with Flickr...');
@@ -52,39 +52,31 @@ var mostRecent = function(req, res) {
 
                 child.on('message', function(data) {
                     // Perform the PUT request to the server to update image metadata on report images
-                    var putData = JSON.stringify({
-                        dominantColor : data.colorData.dominantColor,
-                        imageId : data.colorData.imageId
-                    });
+                    var dataString = JSON.stringify(data);
                     var headers = {
                         'Content-Type': 'application/json',
-                        'Content-Length': putData.length
+                        'Content-Length': dataString.length
                     };
                     var options = {
                         hostname: 'localhost',
                         port: 3000,
-                        path: '/flickr/' + newReport._id + '/' + putData.imageId,
+                        path: '/flickr/' + newReport._id + '/' + data.imageId,
                         method: "PUT",
                         headers: headers
                     };
                     console.log("Path : ", options.path);
 
-                    var putReq = http.request(options, function(putRes) {
-
-                    });
-
-                    var authReq=http.request(options, function(authRes) {
-                        authRes.setEncoding('utf8');
-                        authRes.on('data', function(chunk) {
+                    var putReq=http.request(options, function(putRes) {
+                        putRes.setEncoding('utf8');
+                        putRes.on('data', function(chunk) {
                             console.log("Body: " + chunk)
                         });
                     });
-                    authReq.on('error', function(e) {
+                    putReq.on('error', function(e) {
                         console.log('Error with PUT request: ' + e.message);
                     });
-                    authReq.write(putData);
-                    //authReq.write();
-                    authReq.end();
+                    putReq.write(dataString);
+                    putReq.end();
 
                 });
                 child.send(newReport);
