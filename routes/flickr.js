@@ -22,7 +22,7 @@ var mostRecent = function(req, res) {
         api_key: "5d61227fe2e00928367db4d86ec49b6c",
         extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
         //TODO change to 500
-        per_page: 50,
+        per_page: 500,
         page: 1
     };
     console.log('Authenticating with Flickr...');
@@ -45,7 +45,7 @@ var mostRecent = function(req, res) {
                 if (err) {
                     return console.error(err);
                 }
-                console.log("Inside save function.", newReport);
+                //console.log("Inside save function.", newReport);
                 // Begin a subprocess that runs an agent performing color analysis
                 var cp = require('child_process');
                 var child = cp.fork('routes/process.js');
@@ -104,19 +104,17 @@ var updateImage = function(req, res) {
     var reportId = req.params.reportId;
     var imgId = req.params.imgId;
 
-    //console.log("Request body ", req.body);
     var dominantColor = req.body.dominantColor;
-    //console.log("Dominant color ", dominantColor);
 
-
-    Reports.findOne({_id : reportId}).exec(function(err, report) {
+    Reports.findById(reportId).exec(function(err, report) {
         if (err) {
             return res.status(400).jsonp({error: err});
         } else {
             var filtered = report.photo.filter(function (photo) {
-                return photo.id = imgId;
+                return photo.id === imgId;
             });
-            //console.log("First hit ", filtered[0]);
+            console.log('Filtered photo array langth: ' + filtered.length);
+            console.log("First filtered photo Id: ", filtered[0] ? filtered[0].id : 'No filtered photo found');
             filtered[0].dominantColor = dominantColor;
             report.save(function(err) {
                 if (err) {
@@ -128,9 +126,6 @@ var updateImage = function(req, res) {
         }
     });
 };
-
-//router.get('/', function(req, res) {res.send('Monkeys');})
-//module.exports = router;
 exports.mostRecent = mostRecent;
 exports.getReport = getReport;
 exports.updateImage = updateImage;
