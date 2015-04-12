@@ -45,7 +45,7 @@ var mostRecent = function(req, res) {
                 if (err) {
                     return console.error(err);
                 }
-                //console.log("Inside save function.", newReport);
+                console.log("Inside save function.", newReport);
                 // Begin a subprocess that runs an agent performing color analysis
                 var cp = require('child_process');
                 var child = cp.fork('routes/process.js');
@@ -118,6 +118,7 @@ var updateImage = function(req, res) {
             });
             console.log("First hit ", filtered[0]);
             filtered[0].dominantColor = dominantColor;
+            console.log(filtered[0].dominantColor);
             report.save(function(err) {
                 if (err) {
                     return res.status(400).jsonp({Error: err});

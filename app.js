@@ -9,6 +9,7 @@ var express = require('express')
   , flickr = require('./routes/flickr'),
     about = require('./routes/about')
   , bitzplz = require('./routes/bitzplz')
+  , about = require('./routes/about')
   , http = require('http')
   , path = require('path');
 
@@ -41,6 +42,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/about', about.about);
 app.get('/bitzplz', bitzplz.bitzplz);
+app.get('/about', about.about)
 app.get('/flickr/mostRecent', flickr.mostRecent);
 app.get('/flickr/:reportId', flickr.getReport);
 app.put('/flickr/:reportId/:imgId', flickr.updateImage);

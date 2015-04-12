@@ -8,12 +8,14 @@ ctrl.controller('PostsCtrlAjax', function($scope, $http, $timeout){
       {
       $scope.posts = data.photo; // response data 
       console.log($scope.posts);
-     /* $scope.colors = [];
-      angular.forEach(data, function(value, dominant){
-        if($scope.colors.indexOf(value.dominant) == -1){
-          $scope.colors.push(value.dominant);
-        }
-        })*/
+          $scope.colors = [];
+
+          angular.forEach(data.photo, function(value, dominantColor){
+            if($scope.colors.indexOf(value.dominantColor) == -1){
+              $scope.colors.push(value.dominantColor);
+            }
+            console.log($scope.colors);
+          })
       });
     
   };
@@ -21,7 +23,7 @@ ctrl.controller('PostsCtrlAjax', function($scope, $http, $timeout){
 $scope.getData();
  
   //'javascripts/testapi.json'
-
+  //'../flickr/mostRecent'
   // Kick off the interval
   
  // setInterval($scope.getData,5000);

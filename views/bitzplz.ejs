@@ -8,7 +8,7 @@
     <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
     <title>bits, please</title>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
-         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/X.Y.Z/angular-resource.js"></script>
+         <script type="text/javascript" src="https://code.angularjs.org/1.0.2/angular-resource.js"></script>
         <script src="javascripts/controller.js"></script>
     <!-- Bootstrap -->
     <link type='text/css' href="stylesheets/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +32,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">
+                <a class="navbar-brand" href="/">
                     <img src="img/logo.png">
                 </a>
             </div>
@@ -42,9 +42,8 @@
                     </li>
                     <li class="active"><a href="/bitzplz">Demo</a>
                     </li>
-                    <li><a href="#">Usage</a>
-                    </li>
-                    <li><a href="#">About</a>
+                    
+                    <li><a href="/about">About</a>
                     </li>
                 </ul>
             </div>
@@ -81,10 +80,10 @@
                 </li>
             </ul>
             <button type="button" class="btn btn-default" style="float: left;" data-toggle="modal" data-target="#myModal">Color Analytics</button>
-            <!-- <select ng-model="colorFlt" ng-options="color as color for color in colors" class="form-control" style="width:150px;">
+            <select ng-model="colorFlt" ng-options="color as color for color in colors" class="form-control" style="width:150px;">
                 <option value="">Sort by color</option>
                 <option ng-repeat="color in colors" value="{{color}}">{{color}}</option>
-            </select> -->
+            </select> 
         </div>
     </div>
 
@@ -116,7 +115,7 @@
 
                     <div  class="normal">
                         <img src='{{post.url_n}}' class="img-responsive center">
-                        <p>{{post.title}}</p>
+                        
                     </div>
                     <div class="hover" style="background: #ffffff;">
                         <p class="centered" style = "padding-top: 10%;"><strong>Primary Color:</strong></p>

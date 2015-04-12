@@ -34,12 +34,13 @@ svg.call(tip);
 
 var data = {"foo":"bar"};
 
-d3.json('javascripts/testapi.json', function(data) {
+d3.json('../flickr/mostRecent', function(data) {
 
   var colorTotals = {};
   var colorData = [];
-  data.forEach(function(item, index) {
-    var color = item.dominant;
+  console.log(data.photo);
+  data.photo.forEach(function(item, index) {
+    var color = item.dominantColor;
     if (!colorTotals[color]) {
       colorTotals[color] = 0;
     }
