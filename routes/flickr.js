@@ -21,8 +21,7 @@ var mostRecent = function(req, res) {
     var options = {
         api_key: "5d61227fe2e00928367db4d86ec49b6c",
         extras: 'description, license, date_upload, date_taken, owner_name, icon_server, original_format, last_update, geo, tags, machine_tags, o_dims, views, media, path_alias, url_sq, url_t, url_s, url_q, url_m, url_n, url_z, url_c, url_l, url_o',
-        //TODO change to 500
-        per_page: 500,
+        per_page: 300,
         page: 1
     };
     console.log('Authenticating with Flickr...');
@@ -38,7 +37,6 @@ var mostRecent = function(req, res) {
             }
             var reportData = results.photos
             var newReport = new Reports(reportData);
-            //console.log("Results", reportData);
             console.log("Try to save the result into the Reports collection...");
             // Writes the "report" to the collection in MongoDB
             newReport.save(function (err) {
@@ -51,33 +49,7 @@ var mostRecent = function(req, res) {
                 var child = cp.fork('routes/process.js');
 
                 child.on('message', function(data) {
-                    // Perform the PUT request to the server to update image metadata on report images
-                    var dataString = JSON.stringify(data);
-                    var headers = {
-                        'Content-Type': 'application/json',
-                        'Content-Length': dataString.length
-                    };
-                    var options = {
-                        hostname: 'localhost',
-                        port: 3000,
-                        path: '/flickr/' + newReport._id + '/' + data.imageId,
-                        method: "PUT",
-                        headers: headers
-                    };
-                    console.log("Path : ", options.path);
-
-                    var putReq=http.request(options, function(putRes) {
-                        putRes.setEncoding('utf8');
-                        putRes.on('data', function(chunk) {
-                            console.log("Body: " + chunk)
-                        });
-                    });
-                    putReq.on('error', function(e) {
-                        console.log('Error with PUT request: ' + e.message);
-                    });
-                    putReq.write(dataString);
-                    putReq.end();
-
+                    return
                 });
                 child.send(newReport);
                 res.status(200).jsonp(newReport);
