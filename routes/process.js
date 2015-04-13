@@ -5,7 +5,7 @@
 var cp = require('child_process');
 var http = require('http');
 var photos = null;
-var batchSize = 5;
+var batchSize = 10;
 var batches = [];
 
 // Begin child process when prompted to create batch jobs of color analyses

@@ -30,8 +30,6 @@ var mostRecent = function(req, res) {
         console.log('Authenticated, getting most recent...');
         // Prompt Flickr API to retrieve most recent images
         flickr.photos.getRecent(options, function (error, results) {
-            console.log('Most recent returned!');
-            console.log("Most recent returned length", results.photos.photo.length)
             if (error) {
                 return;
             }
@@ -43,7 +41,6 @@ var mostRecent = function(req, res) {
                 if (err) {
                     return console.error(err);
                 }
-                //console.log("Inside save function.", newReport);
                 // Begin a subprocess that runs an agent performing color analysis
                 var cp = require('child_process');
                 var child = cp.fork('routes/process.js');
@@ -85,8 +82,6 @@ var updateImage = function(req, res) {
             var filtered = report.photo.filter(function (photo) {
                 return photo.id === imgId;
             });
-            console.log('Filtered photo array langth: ' + filtered.length);
-            console.log("First filtered photo Id: ", filtered[0] ? filtered[0].id : 'No filtered photo found');
             filtered[0].dominantColor = dominantColor;
             report.save(function(err) {
                 if (err) {
