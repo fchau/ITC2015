@@ -12,7 +12,7 @@ ctrl.controller('PostsCtrlAjax', function($scope, $http, $timeout){
       $scope.reportId = data._id; 
       console.log($scope.posts);
       $scope.state = "SUCCESS";
-      //$scope.getColor();
+      $scope.getColor();
           $scope.colors = [];
 
           angular.forEach(data.photo, function(value, dominantColor){
@@ -27,6 +27,8 @@ ctrl.controller('PostsCtrlAjax', function($scope, $http, $timeout){
 $scope.getColor = function(){
    $http({method: 'GET', url: '../flickr/' + $scope.reportId}).success(function(report){
         $scope.posts = report.photo;
+         console.log($scope.posts);
+
     });
 }
 $scope.intervalFunction = function(){
@@ -39,7 +41,7 @@ $scope.intervalFunction = function(){
   // Kick off the interval
 $scope.showloader();
 $scope.getData();
-$scope.intervalFunction();
+//$scope.intervalFunction();
  // setInterval($scope.getData,5000);
  
  
