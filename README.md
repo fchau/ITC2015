@@ -8,7 +8,7 @@ Installation Instructions for application testing:
 
 To install node.js on Windows, just go to https://nodejs.org/ official site and download Windows installer, then execute the installer.
 
-##Install MongoDB
+###Install MongoDB
 Go to mongoDB official site https://www.mongodb.org/downloads to download zip file for Windows, and unzip the contents to a specific location. MongoDB will read data at \data\db by default, but mongoDB won’t create this folder for us, so we must create it individually, you can create this folder in Windows Explorer, or type the following command in terminal:
 ```sh 
 C:\> mkdir \data
